@@ -2,7 +2,7 @@ import random
 import re
 
 #read wonderland.txt
-txt_file = open("C:\Users\c-60981\Documents\markov\wonderland.txt", 'r')
+txt_file = open("C:\Users\c-60981\Downloads\markov-master\wonderland.txt", 'r')
 raw_text = txt_file.read()
 txt_file.close()
 
@@ -18,9 +18,9 @@ for i in range(len(words) - 2):
     if pair not in model:
         model[pair] = {}
     node = model[pair]
-    next_word = words[i + 1]
+    next_word = words[i + 2]
     if next_word not in node:
-	node[next_word] = 0
+        node[next_word] = 0
     node[next_word] += 1
 
 # convert counts to probability
@@ -49,4 +49,5 @@ def generateText():
         word = spinner(node)
         sentence += ' ' + word
         pair = [pair[1], word]
-    print sentence
+    print(sentence)
+generateText()
