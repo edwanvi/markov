@@ -1,3 +1,5 @@
+#py2
+
 import random
 import re
 
